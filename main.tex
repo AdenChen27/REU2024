@@ -56,7 +56,7 @@ This paper offers a brief introduction to spectral theory, covering key concepts
 
 \Cref{sec:hilbert} reviews the concept of Hilbert spaces and their structures. 
 \Cref{sec:operators} introduces the adjoint, unitarity, and closure, and presents the multiplication operator. 
-We, then, define the spectrum and resolvent set in \Cref{sec:spectrum-resolvent}, discussing their properties and calculating the spectra of different sets of operators. 
+We then define the spectrum and resolvent set in \Cref{sec:spectrum-resolvent}, discussing their properties and calculating the spectra of different sets of operators. 
 These foundations are essential for \Cref{sec:spectral-thm}, where we prove the spectral theorem and, along the way, construct a functional calculus.
 % ---a method of applying functions defined on the real line to self-adjoint operators.
 This leads to the definition of spectral projectors and a discussion on the discrete and essential spectrum in \Cref{sec:spectral-projectors}. 
@@ -326,7 +326,8 @@ We prove a few basic properties of it:
 
 \begin{proposition}
 \label{thm:multiplication-operator-adjoint}
-  Let \(M_f\), \(X\), and \(\mu\) be as above, then 
+  Let \(M_f\), \(X\), and \(\mu\) be as above.
+  Then 
   \begin{enumerate}[label=(\alph*)]
     \item \(M_f\) is bounded if and only if \(f \in L^{\infty}(X, \mu)\), with \(\norm{M_f} \leq \norm{f}_{\infty}\), 
     \item \(M_f^* = M_{\overline{f}}\). Thus \(M_f\) is self-adjoint if and only if \(f\) is real-valued. 
@@ -350,8 +351,8 @@ We prove a few basic properties of it:
   \norm{f \ind_{A}} \geq \norm{a \ind_{A}} = a \norm{\ind_{A}} . 
   \] 
   Since \(\norm{\ind_{A}} = \mu(A) > 0\), we may conclude that \(\norm{M_f}  \geq a\). 
-  It, then, follows that \(\norm{M_f} = \norm{f}_{\infty}\). 
-  Conversely, if \(f \not\in L^{\infty}(X, \mu)\), then the same arguments shows that \(M_f\) is not bounded. 
+  It then follows that \(\norm{M_f} = \norm{f}_{\infty}\). 
+  Conversely, if \(f \not\in L^{\infty}(X, \mu)\), then the same argument shows that \(M_f\) is not bounded. 
   
   \item % adjoint
   We first check that \(M_f\) is densely defined (so that its adjoint exists): 
@@ -713,7 +714,7 @@ Thus we have:
 
 
 \subsection{Spectrum of a Self-adjoint Operator}
-We use \(\ker(T)\) and \(\ran(T)\), respectively, to denote the null space and the range of the operator \(T\). 
+We use \(\ker(T)\) and \(\ran(T)\) respectively to denote the null space and the range of the operator \(T\). 
 \begin{proposition}
 \label{thm:nullspace-and-range-of-adjoint}
   Let \(T\) be a densely defined linear operator and \(z \in \CC\). Then
@@ -1207,7 +1208,7 @@ We now have the tools to prove the spectral theorem for self-adjoint operators:
   \[
     \Theta^{-1} v = (M_{h} + \I)^{-1} \Theta^{-1} w \in \ran\big((M_{h} + \I)^{-1}\big) = \dom(M_{h}) . 
   \] 
-  It follows that \(\dom(T) \subset \Theta \dom(M_{h})\) and thus \(\dom(T) = \Theta \dom(M_{h})\). 
+  It follows that \(\dom(T) \subset \Theta \dom(M_{h})\), and thus \(\dom(T) = \Theta \dom(M_{h})\). 
 
   To finish the proof, note that for any \(f \in \dom(M_{h})\), by (\ref{eqn:spectral-thm-ast}), we have \(\Theta (M_{h} + \I) f = (T + \I) \Theta f\).
   This gives \(\Theta M_{h} = T \Theta\). 
@@ -1435,7 +1436,7 @@ This is analogous to the finite dimensional case, where we have
 \[
   T u = \sum_{n=1}^{N} \lambda_n P_n , 
 \] 
-operators \(P_n\) being the projectors onto the eigenspaces associated with \(\lambda_n\). 
+with operators \(P_n\), \(1 \leq n \leq N\) acting as projectors onto the eigenspaces associated with \(\lambda_n\). 
 
 
 This can be made rigorous. 
@@ -1594,7 +1595,7 @@ Bounds of these Borel sets enable us to create useful estimates:
 
 \begin{proposition}
   Let \(T\) be a self-adjoint operator in \(\cH\). 
-  A complex number \(\lambda\) is in the discrete spectrum of \(T\) if and only if \(\lambda\) is an eigenvalue of \(T\) of finite multiplicity and an isolate point of \(\spec T\) (such eigenvalues are called \vocab{discrete eigenvalues}). 
+  A complex number \(\lambda\) is in the discrete spectrum of \(T\) if and only if \(\lambda\) is an eigenvalue of \(T\) of finite multiplicity and an isolated point of \(\spec T\) (such eigenvalues are called \vocab{discrete eigenvalues}). 
 \end{proposition}
 \begin{proof}
   Let \(\lambda \in \discspec T\). 
@@ -1658,7 +1659,7 @@ This provides the intuition for the following:
   Let \(T\) be a self-adjoint operator whose spectrum is bounded below. 
   Let \(\Lambda_k\) denote the set of subspaces of \(\dom(T)\) of dimension \(k\) and define 
   \[
-    \alpha_k \coloneqq \inf_{W \in \Lambda_k} \sup_{u \in W \setminus \{0\}} \frac{\left< u, Tu \right>}{\left< u, u \right>} . 
+    \alpha_k \coloneqq \inf_{W \in \Lambda_k} \sup_{u \in W \setminus \{0\}} \frac{\left< u, Tu \right>}{\left< u, u \right>} 
   \] 
   for \(k \in \NN\). 
 
@@ -1679,9 +1680,9 @@ This provides the intuition for the following:
 
   Next, let \(\Sigma \coloneqq \inf \essspec T\) (set \(\Sigma \coloneqq \infty\) if \(\essspec T\) is empty).
   Denote the \(k\)th eigenvalue (counting multiplicities) in \((-\infty, \Sigma)\) by \(E_k\) and the associated eigenvector \(\phi_k\), where \(k \in \{1, \cdots, N\}\) with \(N \in \NN \cup \{\infty\}\). 
-  By \Cref{thm:self-adjoint-spectrum}, we may assume that \(\phi_k\) form an orthonormal family. 
+  By \Cref{thm:self-adjoint-spectrum}, we may assume that the set of \(\phi_k\) form an orthonormal family. 
   Let \(V_n \coloneqq \Span \{\phi_1, \cdots, \phi_n\} \in \Lambda_n\).
-  For any \(u \in V_n\) there holds
+  For any \(u \in V_n\), there holds
   \begin{align*}
     \left< u, Tu \right>
     = \left< \sum_{j=1}^{n} \left< \phi_j, u \right> \phi_j, \sum_{j=1}^{n} \left< \phi_j, u \right> E_j \phi_j \right>
