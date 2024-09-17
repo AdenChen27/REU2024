@@ -41,7 +41,8 @@
 \begin{document}
 
 \begin{abstract}
-  We develop the necessary tools and provide a proof of the min-max theorem, which offers a variational characterization of the discrete eigenvalues that lie below the essential spectrum of a self-adjoint operator. 
+  The min-max theorem offers a variational characterization of the discrete eigenvalues that lie below the essential spectrum of a self-adjoint operator. 
+  In this paper, we develop the necessary tools and present a proof of this theorem. 
 \end{abstract}
 
 \maketitle
@@ -155,7 +156,7 @@ Note that the direct sum of Hilbert spaces is a Hilbert space.\footnote{See \cit
 \section{Operators}
 \label{sec:operators}
 
-We recall the operator norm: \(\norm{T} \coloneqq \sup_{u \in \cH \setminus \{0\}} \norm{T u} / \norm{u}\), which one can understand as the ``maximum stretch'' of an operator. 
+We recall the operator norm: \(\norm{T} \coloneqq \sup_{u \in \cH \setminus \{0\}} \norm{T u} / \norm{u}\), which one can understand as the ``maximum stretch'' of the operator \(T\). 
 From this view, it is not hard to see that operators with finite operator norm, \vocab{bounded operators}, are continuous. 
 
 In this paper, we will focus primarily on unbounded linear operators, that is, linear operators whose operator norm are \textit{not necessarily} finite. 
@@ -184,7 +185,7 @@ Recall the Riesz representation theorem:
   Furthermore, \(\norm{f} = \norm{v_f}\). 
 \end{theorem}
 \begin{proof}
-  See \cite[p.~135]{brezis2011functional}, or REU paper \cite{adler2021hilbert} for a more detailed explanation and background information. 
+  See \cite[p.~135]{brezis2011functional}, or REU paper \cite{adler2021hilbert}. 
 \end{proof}
 
 
@@ -224,7 +225,6 @@ For bounded operators, this domain is, by \Cref{thm:riesz-representation}, the e
 The assumption that the operator is densely defined is important. 
 If \(\overline{\dom(T)} \neq \cH\), there exists, by \Cref{thm:dense-subset-condition}, a nonzero \(w \in \dom(T)^\perp\).
 That is, we have \(\left< w, v \right> = 0\) for all \(v \in \dom(T)\), and \(T^* u\) is not unique as we can add to it \(w\). 
-
 Note also the linearity of the adjoint.
 
 
@@ -389,7 +389,7 @@ We prove a few basic properties of it:
     \left< u, \overline{f} v \right> = \left< u, M_f^* v \right>, \quad \forall u \in \dom(M_f) . 
   \] 
   % for all \(u \in \dom(M_f)\). 
-  It then follows that \(\overline{f} v = M_{f^*} v \in L^2(X, \mu)\), and thus \(v \in \dom(M_{\overline{f}})\). 
+  It then follows that \(\overline{f} v = M_{f}^* v \in L^2(X, \mu)\), and thus \(v \in \dom(M_{\overline{f}})\). 
 \end{enumerate}
 \end{proof}
 
@@ -818,7 +818,8 @@ Such a sequence \((u_n)\) is called a \vocab{Weyl sequence} for \(z\).
   \[
     \norm{(T - z) u_n} 
     = \frac{\norm{(T - z) u_n}}{\norm{u_n}} 
-    = \frac{\norm{x_n}}{\norm{(T - z)^{-1} x_n}} \to 0 . 
+    = \frac{\norm{x_n}}{\norm{(T - z)^{-1} x_n}} 
+    \longrightarrow 0 . 
   \] 
   % Injectivity of \(T - z\) gives each \(\norm{x_n} > 0\), so we have that 
   Hence, \((T - z)^{-1}\) is not bounded. 
@@ -844,7 +845,7 @@ We are now equipped to calculate the spectrum of the multiplication operator:
       \). 
   \end{enumerate}
 \end{proposition}
-One may think of \(\essran f\), the \vocab{essential range} of the function \(f\), as the areas on which the range of \(f\) is ``concentrated.''
+One may think of \(\essran f\), the \vocab{essential range} of the function \(f\), as the area on which the range of \(f\) is ``concentrated.''
 
 \begin{proof}~
 \begin{enumerate}[label=(\alph*)]
@@ -894,7 +895,7 @@ For a smooth function \(f: \bS \to \CC\), we have
 \[
   f(z) = \sum_{n \in \ZZ} \hat{f}(n) z^n, \quad z \in \bS, 
 \] 
-with the right side converging uniformly and where 
+with the right side converging uniformly\footnote{See \cite[Chapter 2]{stein2003fourier}. } and where 
 % \todo{add reference for uniform convergence?}
 \[
   \hat{f}(n) \coloneqq \frac{1}{2\pi} \int_{0}^{2\pi} f(e^{\I \theta}) e^{-\I n \theta} \dd\theta, \quad  n \in \ZZ 
@@ -1436,7 +1437,7 @@ This is analogous to the finite dimensional case, where we have
 \[
   T u = \sum_{n=1}^{N} \lambda_n P_n , 
 \] 
-with operators \(P_n\), \(1 \leq n \leq N\) acting as projectors onto the eigenspaces associated with \(\lambda_n\). 
+where operators \(P_n\) project onto the eigenspaces associated with \(\lambda_n\). 
 
 
 This can be made rigorous. 
