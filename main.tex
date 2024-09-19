@@ -3,7 +3,7 @@
 \usepackage{silence} % for suppressing warnings
 \WarningFilter{mdframed}{You have requested package}
 
-\usepackage[workingpaper]{/Users/aden/Library/CloudStorage/Box-Box/latex/adenc}
+\usepackage{/Users/aden/Library/CloudStorage/Box-Box/latex/adenc}
 \raggedbottom
 
 \usepackage{biblatex}
@@ -34,6 +34,7 @@
 
 
 
+
 \title[Spectral Theory and the Min-Max Theorem]{Spectral Theory and the Min-Max Theorem}
 \author{Aden Chen}
 
@@ -42,7 +43,7 @@
 
 \begin{abstract}
   The min-max theorem offers a variational characterization of the discrete eigenvalues that lie below the essential spectrum of a self-adjoint operator. 
-  In this paper, we develop the necessary tools and present a proof of this theorem. 
+  In this paper, we develop the necessary tools to state and ultimately prove this theorem. 
 \end{abstract}
 
 \maketitle
@@ -60,7 +61,7 @@ This paper offers a brief introduction to spectral theory, covering key concepts
 We then define the spectrum and resolvent set in \Cref{sec:spectrum-resolvent}, discussing their properties and calculating the spectra of different sets of operators. 
 These foundations are essential for \Cref{sec:spectral-thm}, where we prove the spectral theorem and, along the way, construct a functional calculus.
 % ---a method of applying functions defined on the real line to self-adjoint operators.
-This leads to the definition of spectral projectors and a discussion on the discrete and essential spectrum in \Cref{sec:spectral-projectors}. 
+This leads to the definition of spectral projectors and a discussion on the discrete and essential spectra in \Cref{sec:spectral-projectors}. 
 Finally, in \Cref{sec:min-max}, we prove the min-max theorem. 
 
 We assume the reader is familiar with analysis in \(\RR^n\). 
@@ -171,7 +172,7 @@ An operator \(S\) is an \vocab{extension} of \(T\) if \(\dom(T) \subset \dom(S)\
 We denote this relation as \(T \subset S\). 
 
 In what follows, we present the notions of the adjoint, closure, and the graph of an operator. 
-We introduce unitary and self-adjoint operators and the multiplication operator, and discuss their characterizations and key properties.  
+We introduce unitary and self-adjoint operators and the multiplication operator, and discuss their characterizations and key properties.
 
 
 \subsection{Adjoints}
@@ -215,14 +216,14 @@ Recall the Riesz representation theorem:
   % \] 
 \end{definition}
 
-Since there are no Riesz representations for unbounded functionals, as maps of the form \(u \mapsto \left< w, u \right>\) are always bounded by Cauchy-Schwarz, the adjoint as defined above is the operator with the largest domain such that   
+Since there are no Riesz representations for unbounded functionals, as maps of the form \(u \mapsto \left< w, u \right>\) are always bounded by the Cauchy-Schwarz inequality, the adjoint as defined above is the operator with the largest domain such that   
 \[
   \left< v, T u \right> = \left< T^* v, u \right>, \quad \forall u \in \dom(T), \quad \forall v \in \dom(T^*). 
 \]
 For bounded operators, this domain is, by \Cref{thm:riesz-representation}, the entirety of \(\cH\). 
 
 
-The assumption that the operator is densely defined is important. 
+It is important that the operator \(T\) is densely defined. 
 If \(\overline{\dom(T)} \neq \cH\), there exists, by \Cref{thm:dense-subset-condition}, a nonzero \(w \in \dom(T)^\perp\).
 That is, we have \(\left< w, v \right> = 0\) for all \(v \in \dom(T)\), and \(T^* u\) is not unique as we can add to it \(w\). 
 Note also the linearity of the adjoint.
@@ -242,7 +243,7 @@ Note also the linearity of the adjoint.
 
 It is not hard to see that an operator \(T\) being symmetric is equivalent to \(T \subset T^*\).
 Thus, self-adjoint operators are symmetric. 
-The converse is not, in general, true, as \(T^*\) may be a proper extension of \(T\). 
+The converse is not generally true, as \(T^*\) may be a proper extension of \(T\). 
 However, in the case that \(T\) is defined everywhere on \(\cH\), we will see that the Hellinger-Toeplitz theorem (\Cref{thm:hellinger-toeplitz}) gives the boundedness of \(T\), and \Cref{thm:riesz-representation} then implies \(\dom(T^*) = \cH\). 
 Everywhere defined symmetric operators are, thus, bounded and self-adjoint. 
 
@@ -253,7 +254,7 @@ We define also the following partial ordering on the set of self-adjoint operato
   \[
   \left< u, Tu \right> \geq c \left< u, u \right>, \quad \forall u \in \dom(T). 
   \] 
-  For self-adjoint operators \(S\) and \(T\), we write \(S \leq T\) if \(T - S \geq 0\). 
+  For self-adjoint operators \(S\) and \(T\), we write \(S \leq T\) if \(T - S \geq 0\).
 \end{definition}
 
 
@@ -544,7 +545,7 @@ Combined with the Closed graph theorem (\Cref{thm:closed-graph}) , \Cref{thm:dou
   % is called the \vocab{resolvent} of \(T\). 
 \end{definition}
 \footnotetext{
-  Some, e.g. \cite{kreyszig1991introductory}, require only that the inverse is densely defined and bounded. 
+  Some, for example \cite{kreyszig1991introductory}, require only that the inverse is densely defined and bounded. 
   % These are not equivalent definitions, but there is no standard convention either way. 
 }
 
@@ -555,7 +556,7 @@ Thus a regular value is a complex number \(\lambda\) such that the linear proble
 \[
   (T - \lambda) x = v
 \]
-is always, uniquely, and continuously solvable. 
+is always uniquely and continuously solvable. 
 
 
 \begin{definition}
@@ -574,7 +575,7 @@ is always, uniquely, and continuously solvable.
     \item The set of all eigenvalues is called the \vocab{point spectrum}, denoted \(\pspec T\). 
   \end{itemize}
 \end{definition}
-Note that \(\pspec T \subset \spec T\). 
+Note that the point spectrum \(\pspec T\) is a subset of the spectrum. 
 
 
 \subsection{Properties of the Resolvent}
@@ -587,7 +588,7 @@ Note that \(\pspec T \subset \spec T\).
     % R(z; T) \coloneqq (T - z)^{-1}
     R(\cdot; T): \res T \longrightarrow \cL(\cH), \quad \lambda \longmapsto (T - \lambda)^{-1}
   \] 
-  is holomorphic. 
+  is holomorphic, that is, complex differentiable in a neighborhood of each point in the domain \(\res T\). 
 \end{theorem}
 \begin{proof}
   If \(\res T = \emptyset\), it is closed, so we assume otherwise and pick arbitrary point  \(z_0 \in \res T\). 
@@ -776,8 +777,7 @@ We use \(\ker(T)\) and \(\ran(T)\) respectively to denote the null space and the
   \[
     \ran(T - z) = \overline{\ran(T - z)} = \cH . 
   \]
-  So \(T - z\) is surjective, with inverse bounded by the same estimate.
-  It follows that \(\spec T \subset \RR\). 
+  So \(T - z\) is surjective, and its inverse is bounded by the same estimate.
 
   Finally, let \(\phi_1\) and \(\phi_2\) be eigenvectors corresponding to distinct eigenvalues \(\lambda_1\) and \(\lambda_2\). 
   We have 
@@ -786,7 +786,7 @@ We use \(\ker(T)\) and \(\ran(T)\) respectively to denote the null space and the
     = \left< T \phi_1, \phi_2 \right>
     = \left< \phi_1, T \phi_2 \right>
     = \lambda_2 \left< \phi_1, \phi_2 \right> . 
-  % 0 = \left< T \phi_1, \phi_2 \right> = \left< \phi_1, T \phi_2 \right> = (\lambda_1 - \lambda_2) \left< \phi_1, \phi_2 \right> , 
+  % 0 = \left< T \phi_1, \phi_2 \right> = \left< \phi_1, T \phi_2 \right> = (\lambda_1 - \lambda_2) \left< \phi_1, \phi_2 \right>. 
   \] 
   This gives \(\left< \phi_1, \phi_2 \right> = 0\). 
   % and \(\phi_1\) is orthogonal to \(\phi_2\). 
@@ -826,8 +826,6 @@ Such a sequence \((u_n)\) is called a \vocab{Weyl sequence} for \(z\).
 \end{proof}
 
 
-
-
 We are now equipped to calculate the spectrum of the multiplication operator: 
 \begin{proposition}
 \label{thm:multiplication-operator-spectrum}
@@ -862,14 +860,12 @@ One may think of \(\essran f\), the \vocab{essential range} of the function \(f\
 
   \item % spectrum
   Let \(\lambda \not\in \essran f\). 
-  Then for some \(\epsilon > 0\), there holds \(\abs{f - \lambda} > \epsilon\) a.e., 
-    so \(1 / (f - \lambda)\) is defined a.e.\ and \(\norm{1 / (f - \lambda)}_{\infty} < \infty\). 
-  Since \(\norm{M_{1 / (f - \lambda)}}\) is bounded by \Cref{thm:multiplication-operator-adjoint}, we have \(\lambda \in \res M_f\). 
+  Then for some \(\epsilon > 0\), there holds \(\abs{f - \lambda} > \epsilon\) a.e., so \(1 / (f - \lambda)\) is defined a.e.\ and \(\norm{1 / (f - \lambda)}_{\infty} < \infty\). 
+  Since \Cref{thm:multiplication-operator-adjoint} gives the boundedness of \(M_{1 / (f - \lambda)}\), we have \(\lambda \in \res M_f\). 
 
   It remains to show that \(\essran f \subset \spec M_f\). 
   For a \(\lambda \in \essran f\), if \(\mu \{x: f(x) = \lambda\} > 0\), then we have shown that \(\lambda \in \pspec M_f \subset \spec M_f\). 
-  Thus assume otherwise. 
-  Then, as above, \(1 / (f - \lambda)\) is defined a.e.\ and \(M_{1 / (f - \lambda)}\) is the inverse of \((M_f - \lambda)\). 
+  If, on the other hand, \(\mu \{x: f(x) = \lambda\} = 0\), then, as above, \(1 / (f - \lambda)\) is defined a.e.\ and \(M_{1 / (f - \lambda)}\) is the inverse of \((M_f - \lambda)\). 
   From \(\lambda \in \essran f\), we have \(\abs{f - \lambda} < \epsilon\) on a set of positive measure for all \(\epsilon > 0\). 
   This gives \(\norm{1 / (f - \lambda)}_{\infty} = \infty\), 
   so \(M_{1 / (f - \lambda)}\) is not bounded and \(\lambda \in \spec M_f\). 
@@ -1222,7 +1218,7 @@ We now have the tools to prove the spectral theorem for self-adjoint operators:
 With the spectral theorem, we can now construct a functional calculus for self-adjoint operators. 
 For a bounded Borel function \(f \in \cB_\mathrm{b}(\RR): \RR \to \CC\), we define 
 \[
-  f(T) \coloneqq \Theta M_{f \circ h} \Theta^{-1} 
+  f(T) \coloneqq \Theta M_{f \circ h} \Theta^{-1}, 
 \] 
 where \(\Theta\) and \(h\) are given in \Cref{thm:spectral-thm-self-adjoint}. 
 Note that since \(f \circ h\) is bounded, the operator \(f(T)\) is bounded by \Cref{thm:multiplication-operator-adjoint}. 
@@ -1312,8 +1308,7 @@ We remark that the Spectral Theorem can be used to prove the following result sh
 We first present a quick review of projection operators:
 
 \begin{definition}
-  A linear operator \(P\) on \(\cH\) is called a projection operator if \(P\) is idempotent. 
-  That is, \(P^2 = P\). 
+  A linear operator \(P\) on \(\cH\) is called a projection operator if \(P\) is idempotent, that is, if \(P^2 = P\). 
   A self-adjoint projection operator is called a \vocab{orthogonal projector}. 
 \end{definition}
 
@@ -1465,7 +1460,7 @@ For our purpose, though, it suffices to view \(P(\cdot)\) as orthogonal projecto
 \end{proposition}
 \begin{proof}
   % It is easy to check that operators unitarily equivalent to orthogonal projectors are orthogonal projectors, so 
-  We assume \(\cH = L^2(X, \mu)\) and \(T = M_h\) with \(X, \mu, h\) as in \Cref{thm:spectral-thm-self-adjoint}. 
+  We assume \(\cH = L^2(X, \mu)\) and \(T = M_h\) with \(X\), \(\mu\), and \(h\) as in \Cref{thm:spectral-thm-self-adjoint}. 
   Thus we have \(P(E) = M_{\ind_{E} \circ h}\). 
   It is easy to check that the same statements hold for any operator \(T\) unitarily equivalent to \(M_{h}\). 
   \begin{enumerate}[label=(\alph*)]
@@ -1749,7 +1744,7 @@ This provides the intuition for the following:
 I am grateful to Andreas Stavrou for reigniting my passion for mathematics in MATH160s, and to Professor Peter May for allowing me to change my decision about writing a paper.
 % I am grateful to Professor Peter May for allowing me to change my decision about writing a paper, even after the program had already begun. 
 % I sincerely thank Andreas Stavrou for an inspiring year in MATH160s, which reignited my passion for mathematics. 
-I am deeply indebted to my mentor, DeVon Ingram, whose patience and guidance helped me realize that I am sometimes able to grasp mathematical concepts that intimidated me. 
+I am deeply indebted to my mentor, DeVon Ingram, whose patience and guidance helped me realize that I am sometimes able to grasp mathematical concepts that intimidate me. 
 % Lastly, my sincere thanks to AZ, HW, RD, and WC for unwavering support and shared laughter, and Zane Miller for his existence. 
 Lastly, my sincere thanks to Alexandra Zhou, Hanlei Wen, Ryan Dai, Will Comess, and Joshua Johnson for unwavering support and shared laughter. 
 % for unwavering support and the laughter we enjoyed, and Zane Miller for his existence. 
@@ -1763,6 +1758,8 @@ Lastly, my sincere thanks to Alexandra Zhou, Hanlei Wen, Ryan Dai, Will Comess, 
 
 
 \end{document}
+
+
 
 
 
